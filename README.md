@@ -24,7 +24,7 @@
 2. Open Google Chrome and go to `chrome://extensions/`.
 3. Enable Developer mode in the top right corner.
 4. Click "Load unpacked".
-5. Select the project folder `pomodoro-flow-extension`.
+5. Select the project folder `pomodoroflow`.
 
 ## Usage
 
