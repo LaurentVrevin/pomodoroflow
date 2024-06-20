@@ -71,8 +71,7 @@ pomodoroflow/
 
 ## Screenshots
 
-![Screenshot 1](path/to/screenshot1.png)
-![Screenshot 2](path/to/screenshot2.png)
+![screenshotpomodorow](https://github.com/LaurentVrevin/pomodoroflow/assets/94620399/5e58941c-e0f8-4ca6-95c0-feacc4b856af)
 
 ## Contributing
 
