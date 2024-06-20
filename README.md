@@ -86,7 +86,7 @@ Contributions are welcome! Here's how you can help:
 
 ## Author
 
-- **Your Name** - [Your GitHub Profile](https://github.com/your-username)
+- **Laurent Vrévin** - [My Profile](https://github.com/LaurentVrevin)
 
 ## License
 
