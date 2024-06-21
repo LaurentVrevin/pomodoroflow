@@ -13,7 +13,7 @@
 - Set custom work and break intervals.
 - Display elapsed time in a simple user interface.
 - Send notifications to indicate when to start a break or get back to work.
-- Ability to start, stop, and reset the timer.
+- Ability to start, stop the timer.
 
 ## Installation
 
@@ -71,7 +71,13 @@ pomodoroflow/
 
 ## Screenshots
 
-![screenshotpomodorow](https://github.com/LaurentVrevin/pomodoroflow/assets/94620399/5e58941c-e0f8-4ca6-95c0-feacc4b856af)
+### Popup :
+![screenshotpomodorow](https://github.com/LaurentVrevin/pomodoroflow/assets/94620399/bd85c3b9-6ecf-4c93-aea2-71821b7f9c7c)
+
+
+### Notification :
+![screenshotNotification](https://github.com/LaurentVrevin/pomodoroflow/assets/94620399/dd9c4f5a-eac7-4733-b393-39abdb4cfcb8)
+
 
 ## Contributing
 
