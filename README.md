@@ -24,7 +24,7 @@
 2. Open Google Chrome and go to `chrome://extensions/`.
 3. Enable Developer mode in the top right corner.
 4. Click "Load unpacked".
-5. Select the project folder `pomodoro-flow-extension`.
+5. Select the project folder `pomodoroflow`.
 
 ## Usage
 
@@ -71,8 +71,7 @@ pomodoroflow/
 
 ## Screenshots
 
-![Screenshot 1](path/to/screenshot1.png)
-![Screenshot 2](path/to/screenshot2.png)
+![screenshotpomodorow](https://github.com/LaurentVrevin/pomodoroflow/assets/94620399/5e58941c-e0f8-4ca6-95c0-feacc4b856af)
 
 ## Contributing
 
@@ -86,7 +85,7 @@ Contributions are welcome! Here's how you can help:
 
 ## Author
 
-- **Your Name** - [Your GitHub Profile](https://github.com/your-username)
+- **Laurent Vrévin** - [My Profile](https://github.com/LaurentVrevin)
 
 ## License
 
