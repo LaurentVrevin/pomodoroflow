@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Productivity & Well-being</title>
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <style>
+    html, body {
+      width: 350px;
+      height: 500px;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .button {
+      margin: 5px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button-reset {
+      background-color: #6c757d;
+    }
+    .button-stop {
+      background-color: #dc3545;
+    }
+    .counter {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+    .work {
+      color: green;
+    }
+    .break {
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>P O M O D O R O F L O W</h1>
+    <h2>Be focus, drink a coffee</h2>
+    <div class="input-group">
+      <label for="workInterval">Work Interval (minutes)</label>
+      <input type="number" id="workInterval" min="1">
+    </div>
+    <div class="input-group">
+      <label for="breakInterval">Break Interval (minutes)</label>
+      <input type="number" id="breakInterval" min="1">
+    </div>
+    <div class="input-group">
+      <label for="elapsedTime">Elapsed Time</label>
+      <div id="elapsedTime" class="counter work">0:00</div>
+    </div>
+    <button id="startButton" class="button">Start Timer</button>
+    <button id="stopButton" class="button button-stop">Stop Timer</button>
+    <button id="resetButton" class="button button-reset">Reset Timer</button>
+  </div>
+  <script src="scripts/popup.js"></script>
+</body>
+</html>

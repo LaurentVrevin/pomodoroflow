@@ -1,5 +1,7 @@
+// Import the timer and notifications scripts
 importScripts('timer.js', 'notifications.js');
 
+// Set initial values when the extension is installed or updated
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.get(['workInterval', 'breakInterval'], data => {
     if (!data.workInterval || !data.breakInterval) {
@@ -11,6 +13,7 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
+// Listen for messages from the popup script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "startTimer") {
     startCounter();
