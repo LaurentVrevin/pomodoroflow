@@ -14,8 +14,7 @@ function showNotification(title, message) {
     if (chrome.runtime.lastError) {
       console.error(chrome.runtime.lastError);
     } else {
-      console.log('Notification displayed with ID:', notificationId);
-      chrome.runtime.sendMessage({ action: "playSound" });
+      console.log('Notification displayed with ID:', notificationId);    
     }
   });
 }

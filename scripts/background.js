@@ -21,15 +21,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     stopCounter(true);
   } else if (request.action === "resetTimers") {
     resetTimers();
-  } else if (request.action === "playSound") {
-    playNotificationSound();
-  }
+  } 
     
   sendResponse({ status: "ok" });
 });
 
-function playNotificationSound() {
-  const audioUrl = chrome.runtime.getURL('audio/notification.mp3');
-  const audio = new Audio(audioUrl);
-  audio.play().catch(error => console.error('Error playing notification sound:', error));
-}
+
