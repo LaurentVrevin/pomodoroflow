@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
   loadSettings();
-  document.getElementById('startButton').addEventListener('click', function() {
-    saveSettings();
-    startCounter();
-  });
-  document.getElementById('resetButton').addEventListener('click', resetTimers);
-  document.getElementById('stopButton').addEventListener('click', stopCounter);
+  document.getElementById('startStopButton').addEventListener('click', toggleTimer);
 
   // Initial call to update times on load
-  updateElapsedTimeDisplay(0); // Initialize to 0
+  updateElapsedTimeDisplay(0);
 
   // Listen for updates from the background script
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "updateTime") {
       updateElapsedTimeDisplay(request.time, request.isWorkInterval);
     }
+  });
+
+  // Initialize button state based on stored timer status
+  chrome.storage.local.get(['isTimerRunning'], function(data) {
+    updateButtonState(data.isTimerRunning);
   });
 });
 
@@ -40,24 +40,39 @@ function saveSettings() {
   });
 }
 
-function resetTimers() {
-  chrome.runtime.sendMessage({ action: "resetTimers" }, function(response) {
-    console.log('Timers reset', response);
-    updateElapsedTimeDisplay(0);
+function toggleTimer() {
+  chrome.storage.local.get(['isTimerRunning'], function(data) {
+    if (data.isTimerRunning) {
+      stopCounter();
+    } else {
+      saveSettings();
+      startCounter();
+    }
   });
 }
 
 function startCounter() {
-  chrome.runtime.sendMessage({ action: "startTimer" }, function(response) {
-    console.log('Timer started', response);
+  chrome.storage.local.set({ isTimerRunning: true }, function() {
+    chrome.runtime.sendMessage({ action: "startTimer" }, function(response) {
+      console.log('Timer started', response);
+      updateButtonState(true);
+    });
   });
 }
 
 function stopCounter() {
-  chrome.runtime.sendMessage({ action: "stopTimer" }, function(response) {
-    console.log('Timer stopped', response);
-    updateElapsedTimeDisplay(0);
+  chrome.storage.local.set({ isTimerRunning: false, workTime: 0, breakTime: 0 }, function() {
+    chrome.runtime.sendMessage({ action: "stopTimer" }, function(response) {
+      console.log('Timer stopped', response);
+      updateButtonState(false);
+      updateElapsedTimeDisplay(0);
+    });
   });
+}
+
+function updateButtonState(isRunning) {
+  const button = document.getElementById('startStopButton');
+  button.textContent = isRunning ? 'Stop Timer' : 'Start Timer';
 }
 
 function updateElapsedTimeDisplay(timeInSeconds, isWorkInterval) {

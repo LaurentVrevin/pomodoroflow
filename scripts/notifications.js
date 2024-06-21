@@ -15,6 +15,7 @@ function showNotification(title, message) {
       console.error(chrome.runtime.lastError);
     } else {
       console.log('Notification displayed with ID:', notificationId);
+      chrome.runtime.sendMessage({ action: "playSound" });
     }
   });
 }
@@ -29,3 +30,4 @@ chrome.notifications.onButtonClicked.addListener((notificationId, buttonIndex) =
     });
   }
 });
+
